@@ -22,5 +22,11 @@ file_permissions=(
   ["/usr/local/bin/Installation_guide"]="0:0:755"
   ["/usr/local/bin/livecd-sound"]="0:0:755"
   ["/usr/local/bin/ezmaint"]="0:0:755"
-  
+  ["/etc/skel/.local/bin/clock"]="0:0:755"
+  ["/etc/skel/.local/bin/dtos-help"]="0:0:755"
+  ["/etc/skel/.local/bin/kernel"]="0:0:755"
+  ["/etc/skel/.local/bin/memory"]="0:0:755"
+  ["/etc/skel/.local/bin/pacupdate"]="0:0:755"
+  ["/etc/skel/.local/bin/upt"]="0:0:755"
+  ["/etc/skel/.local/bin/volume"]="0:0:755"
 )
