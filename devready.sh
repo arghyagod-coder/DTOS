@@ -27,3 +27,23 @@ echo "Getting the latest chaotic mirrorlist"
 pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' --noconfirm
 cp etc/pacman.d/chaotic-mirrorlist /etc/pacman.d/chaotic-mirrorlist
 
+addkeyserver() { \
+    echo "#######################################################"
+    echo "## Adding keyservers to /etc/pacman.d/gnupg/gpg.conf ##"
+    echo "#######################################################"
+    grep -qxF "keyserver.ubuntu.com:80" /etc/pacman.d/gnupg/gpg.conf || echo "keyserver hkp://keyserver.ubuntu.com:80" | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
+    grep -qxF "keyserver.ubuntu.com:443" /etc/pacman.d/gnupg/gpg.conf || echo "keyserver hkps://keyserver.ubuntu.com:443" | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
+}
+
+addkeyserver || error "Error adding keyservers to /etc/pacman.d/gnupg/gpg.conf"
+
+receive_key() { \
+    local _pgpkey="C71486C31555B12E"
+    echo "#####################################"
+    echo "## Adding PGP key $_pgpkey ##"
+    echo "#####################################"
+    sudo pacman-key --recv-key $_pgpkey
+    sudo pacman-key --lsign-key $_pgpkey
+}
+
+receive_key || error "Error receiving PGP key $_pgpkey"

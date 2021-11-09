@@ -33,7 +33,6 @@ gnu-netcat
 gpart
 gpm
 gptfdisk
-grml-zsh-config
 hdparm
 intel-ucode
 ipw2100-fw
@@ -247,11 +246,13 @@ whois
 alacritty
 dtos-alacritty
 alacritty-themes
-
 neofetch
 bluez
 bluez-utils
 
+# Backgrounds
+feh
+dtos-backgrounds
 
 # Fonts
 ttf-dejavu
@@ -312,7 +313,7 @@ ldoc
 xmlto
 lua-filesystem
 lua-penlight
-dmenu 
+dmenu
 conky
 dmenu-distrotube
 dmscripts

@@ -8,7 +8,7 @@ rootuser () {
   fi
 }
 rootuser
-rm -rf ../isobuild/*
-cp -r ./* ../isobuild/
-cd ../isobuild
+rm -rf ../buildiso/*
+cp -r ./* ../buildiso/
+cd ../buildiso
 sudo ./steps.sh
