@@ -1,4 +1,4 @@
-name: Calinix Build ISO (Release)
+name: DTOS Build ISO (Release)
 on:
   workflow_dispatch:
     inputs:
